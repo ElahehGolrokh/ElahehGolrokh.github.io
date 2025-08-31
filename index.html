@@ -52,6 +52,10 @@
       margin-top: 1rem;
     }
 
+    .projects-grid.single-col {
+      grid-template-columns: 1fr; /* single column */
+    }
+
     .project-card {
       background: #fff;
       border-radius: 8px;
@@ -183,7 +187,7 @@
 
     <section id="kaggle">
       <h2>🏅 Kaggle Notebooks</h2>
-      <div class="projects-grid">
+      <div class="projects-grid single-col">
         <div class="project-card">
           <img src="images/kaggle.jpg" alt="Kaggle Notebook">
           <div class="content">
