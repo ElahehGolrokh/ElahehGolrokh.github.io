@@ -31,7 +31,7 @@
     }
 
     .container {
-      max-width: 900px;
+      max-width: 1100px;
       margin: auto;
       padding: 2rem 1rem;
     }
@@ -43,16 +43,39 @@
       color: #222;
     }
 
-    .project {
-      background: #fff;
-      padding: 1rem;
-      margin: 1rem 0;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    /* Grid layout for projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
     }
 
-    .project h3 {
+    .project-card {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      transition: transform 0.2s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .project-card .content {
+      padding: 1rem;
+    }
+
+    .project-card h3 {
       margin-top: 0;
+      font-size: 1.2rem;
     }
 
     a {
@@ -93,86 +116,86 @@
     <section id="projects">
       <h2>Projects</h2>
 
-      <div class="project">
-        <h3><a href="https://github.com/ElahehGolrokh/data-science-salary-range" target="_blank">🤖 Data Science Salary Estimation</a></h3>
-        <p>
-            This project demonstrates a <strong>full end-to-end ML pipeline</strong> for estimating data scientist salaries. 
-            It includes <strong>data scraping, cleaning/EDA, preprocessing, feature engineering, model training, 
-            hyperparameter tuning, evaluation, deployment, and a client-facing Gradio app</strong>.
-        </p>
-        <p>
-            While salary prediction is inherently noisy, the emphasis is on showcasing 
-            <strong>practical ML workflows, deployment, and production-ready engineering skills</strong>.
-        </p>
-      </div>
-
-      <div class="project">
-        <h3><a href="https://github.com/ElahehGolrokh/superstore_sales_plotly_dashboard" target="_blank">📊 Superstore Sales Plotly Dashboard</a></h3>
-        <p>Developed a dashboard using Plotly to visualize sales data, enabling better decision-making for business strategies.</p>
-      </div>
-
-      <div class="project">
-        <h3><a href="https://github.com/ElahehGolrokh/customized_object_counter_YOLOv8" target="_blank">🖼️ Highway Car Counting with YOLOv8</a></h3>
-        <p>This project aims to count cars entering or exiting a specified line on the highway. It includes object tracking and object counting functionalities.</p>
-        <p>The basic functionality is derived from the YOLO object counting example. However, the object counter has been customized to accurately count cars entering or exiting a specific region on the highway.</p>
-        <p>This approach can be adapted to count various items in different contexts and applications.</p>
-      </div>
-
-      <div class="project">
-        <h3><a href="https://github.com/ElahehGolrokh/car-plate-detection-YOLOv8" target="_blank">🖼️ YOLOv8-Powered License Plate Detection & Recognition</a></h3>
-        <p>This project aims to detect and recognize car plates in real-time using YOLOv8. It includes functionalities for object detection and classification.</p>
-        <p>The basic functionality is derived from the YOLO object detection example. However, the model has been fine-tuned to accurately detect and recognize car plates in various conditions.</p>
-        <p>This approach can be adapted to detect various objects in different contexts and applications.</p>
-      </div>
-
-      <div class="project">
-        <h3><a href="https://github.com/ElahehGolrokh/Road-Casualty-statistics" target="_blank">🚦Road Casualty Statistics Analysis</a></h3>
-        <p>
-            This project analyzes road accident data to uncover <strong>patterns and contributing factors</strong> 
-            behind traffic casualties. The goal is to provide <strong>data-driven insights and potential solutions</strong> 
-            for reducing accidents.
-        </p>
-        <p>
-            The analysis and package were developed using a public dataset from Kaggle.
-        </p>
-      </div>
-
-      <div class="project">
-        <h3>🧑‍🤝‍🧑 <a href="https://github.com/ElahehGolrokh/face_recognition" target="_blank">Face Recognition Utility (based on ageitgey/face_recognition)</a></h3>
-        <p>
-            Built a lightweight <strong>entry-point script</strong> around the popular 
-            <a href="https://github.com/ageitgey/face_recognition" target="_blank">face_recognition</a> library, 
-            enabling easier command-line usage for <strong>face detection and recognition tasks</strong>.
-        </p>
-        <p>
-            While the underlying library is open source, this project demonstrates my ability to 
-            <strong>adapt existing tools into usable workflows</strong> for real-world applications.
-        </p>
+      <div class="projects-grid">
+        
+        <div class="project-card">
+          <img src="images/salary.jpg" alt="Salary Estimation Project">
+          <div class="content">
+            <h3><a href="https://github.com/ElahehGolrokh/data-science-salary-range" target="_blank">🤖 Data Science Salary Estimation</a></h3>
+            <p>
+              Full <strong>end-to-end ML pipeline</strong> for estimating data scientist salaries: 
+              <strong>data scraping, cleaning/EDA, preprocessing, feature engineering, model training, 
+              hyperparameter tuning, evaluation, deployment, and a client-facing Gradio app</strong>.
+            </p>
+            <p>
+              Focuses on <strong>practical ML workflows, deployment, and production-ready engineering skills</strong>.
+            </p>
+          </div>
         </div>
 
+        <div class="project-card">
+          <img src="images/dashboard.jpg" alt="Dashboard Project">
+          <div class="content">
+            <h3><a href="https://github.com/ElahehGolrokh/superstore_sales_plotly_dashboard" target="_blank">📊 Superstore Sales Plotly Dashboard</a></h3>
+            <p>Developed a dashboard using Plotly to visualize sales data, enabling better decision-making for business strategies.</p>
+          </div>
+        </div>
 
+        <div class="project-card">
+          <img src="images/giphy.gif" alt="Car Counting Project">
+          <div class="content">
+            <h3><a href="https://github.com/ElahehGolrokh/customized_object_counter_YOLOv8" target="_blank">🚗 Highway Car Counting with YOLOv8</a></h3>
+            <p>Counts cars entering or exiting a specified line on the highway using a customized YOLOv8 object counter with tracking.</p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="images/car_plate.jpg" alt="License Plate Project">
+          <div class="content">
+            <h3><a href="https://github.com/ElahehGolrokh/car-plate-detection-YOLOv8" target="_blank">🖼️ YOLOv8 License Plate Detection</a></h3>
+            <p>Real-time car plate detection and recognition with YOLOv8, fine-tuned for robustness across conditions.</p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="images/car_plate.jpg" alt="Road Casualty Project">
+          <div class="content">
+            <h3><a href="https://github.com/ElahehGolrokh/Road-Casualty-statistics" target="_blank">🚦 Road Casualty Statistics Analysis</a></h3>
+            <p>Analyzed road accident data to uncover <strong>patterns and contributing factors</strong>, providing <strong>data-driven insights</strong> for reducing accidents.</p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          ![Face Recognition Project](https://drive.google.com/file/d/1oLmbc65maxxO0CNX0f1Z8J3OBbf80tvH/view?usp=sharing)
+          <div class="content">
+            <h3><a href="https://github.com/ElahehGolrokh/face_recognition" target="_blank">🧑‍🤝‍🧑 Face Recognition Utility</a></h3>
+            <p>Built a lightweight <strong>entry-point script</strong> around the <code>face_recognition</code> library for easier command-line usage.</p>
+          </div>
+        </div>
+
+      </div>
     </section>
 
     <section id="kaggle">
-    <h2>🏅 Kaggle Notebooks</h2>
-    <div class="project">
-        <h3>📊 <a href="https://www.kaggle.com/code/elahehgolrokh/customer-analytics-eda-inferential-statistics/notebook" target="_blank">
-        Customer Analytics: EDA & Inferential Statistics</a></h3>
-        <p>
-        Conducted <strong>exploratory data analysis</strong> and applied 
-        <strong>inferential statistics</strong> to uncover insights from customer data. 
-        This notebook demonstrates <strong>data storytelling and statistical reasoning</strong> 
-        in practical business contexts.
-        </p>
-        <p>
-        I have authored other Kaggle notebooks that earned <strong>medals</strong> as well, 
-        but in the interest of keeping this portfolio concise, they are not listed here. 
-        You can find them on my 
-        <a href="https://www.kaggle.com/elahehgolrokh" target="_blank">Kaggle profile</a>.
-        </p>
-    </div>
+      <h2>🏅 Kaggle Notebooks</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <img src="images/kaggle.jpg" alt="Kaggle Notebook">
+          <div class="content">
+            <h3><a href="https://www.kaggle.com/code/elahehgolrokh/customer-analytics-eda-inferential-statistics/notebook" target="_blank">
+            📊 Customer Analytics: EDA & Inferential Statistics</a></h3>
+            <p>
+              Conducted <strong>exploratory data analysis</strong> and applied <strong>inferential statistics</strong> 
+              to extract insights from customer data, showcasing <strong>data storytelling and statistical reasoning</strong>.
+            </p>
+            <p>
+              Other Kaggle notebooks with <strong>medals</strong> are available on my 
+              <a href="https://www.kaggle.com/elahehgolrokh" target="_blank">Kaggle profile</a>.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
-
 
     <section id="contact">
       <h2>Contact</h2>
